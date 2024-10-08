@@ -1476,7 +1476,7 @@ module MakeBox( box )
                             }
         }
 
-        module MakeStripedGrid( x = 200, y = 200, w = 1, dx = 0, dy = 0, depth_ratio = 0.5, thickness = m_lid_thickness )
+        module MakeStripedGrid( x = 200, y = 200, w = 1, dx = 0, dy = 0, depth_ratio = 1.0, thickness = m_lid_thickness )
         {
 
             _thickness = thickness * depth_ratio;
@@ -1777,7 +1777,7 @@ module MakeBox( box )
 
                                         translate( [x/2-x2/2, y/2-y2/2, 0])
                                             RotateAboutPoint( theta, [0,0,1], [x2/2,y2/2,0] )
-                                                MakeStripedGrid( x = x2, y = y2, w = m_lid_stripe_width, dx = m_lid_stripe_space, dy = 0, depth_ratio = 0.5, thickness = thickness );
+                                                MakeStripedGrid( x = x2, y = y2, w = m_lid_stripe_width, dx = m_lid_stripe_space, dy = 0, depth_ratio = 1.0, thickness = thickness );
 
                                         MakeAllLidLabelFrames( offset = m_lid_label_bg_thickness, thickness = thickness );
                                     }
